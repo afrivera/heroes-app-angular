@@ -10,6 +10,9 @@ import { SearchHeroesComponent } from './pages/search-heroes/search-heroes.compo
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { HomeHeroesComponent } from './pages/home-heroes/home-heroes.component';
 import { ListHeroesComponent } from './pages/list-heroes/list-heroes.component';
+import { HeroCardComponent } from './components/hero-card/hero-card.component';
+
+import { ImagePipe } from './pipes/image.pipe';
 
 
 
@@ -19,7 +22,10 @@ import { ListHeroesComponent } from './pages/list-heroes/list-heroes.component';
     SearchHeroesComponent,
     HeroesComponent,
     HomeHeroesComponent,
-    ListHeroesComponent
+    ListHeroesComponent,
+    HeroCardComponent,
+
+    ImagePipe
   ],
   imports: [
     CommonModule,
