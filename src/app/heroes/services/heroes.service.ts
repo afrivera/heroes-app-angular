@@ -25,4 +25,12 @@ export class HeroesService {
   getHeroBySugges( suggest: string ): Observable< Heroe []>{
     return this.http.get< Heroe []>( `${ this._baseUrl }/heroes?q=${ suggest }&_limit=6`)
   }
+
+  addHeroe( heroe: Heroe): Observable<Heroe>{
+    return this.http.post< Heroe>( `${ this._baseUrl }/heroes`, heroe)
+  }
+
+  updateHeroe( heroe: Heroe ): Observable<Heroe>{
+    return this.http.put<Heroe>( `${this._baseUrl}/heroes/${ heroe.id }`, heroe );
+  }
 }
