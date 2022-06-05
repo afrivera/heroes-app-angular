@@ -1,5 +1,5 @@
 
-<h1>New Hero <small>asd</small></h1>
+<h1>{{ (heroe.id) ? 'Editar': 'Nuevo' }} Hero <small>{{ heroe.superhero }}</small></h1>
 
 <div fxLayout="row" 
      fxLayout.xs="column"
@@ -65,12 +65,23 @@
         </mat-form-field>
 
         <br>
-        <button mat-raised-button
-                color="primary"
-                (click)="save()">
-            <mat-icon>save</mat-icon> 
-            save
-        </button>
+        <div fxLayout>
+            <button mat-raised-button
+                    color="primary"
+                    (click)="save()">
+                <mat-icon>save</mat-icon> 
+                {{ (heroe.id) ? 'update': 'save' }}
+            </button>
+            <span class="spacer"></span>
+            <button *ngIf="heroe.id"
+                    mat-raised-button
+                    color="warn"
+                    (click)="deleteHeroe()">
+                <mat-icon>delete</mat-icon> 
+                delete
+            </button>
+
+        </div>
     </div>
     <div fxFlex="50">
         <img [src]="heroe | image">
